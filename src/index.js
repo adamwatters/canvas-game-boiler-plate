@@ -9,7 +9,7 @@ window.addEventListener("load", function() {
     requestAnimationFrame(tick);
   };
 
-  game.init();
+  game.init(screen);
 
   tick();
 });

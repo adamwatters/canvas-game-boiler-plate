@@ -5,7 +5,8 @@ function Game(size) {
 
 Game.prototype = {
   init: function() {
-    var player = new Player();
+    var centerPosition = {x: this.size.x / 2, y: this.size.y / 2};
+    var player = new Player(centerPosition);
     this.addBody(player);
   },
 
@@ -26,4 +27,11 @@ Game.prototype = {
   addBody: function(body) {
     this.bodies.push(body);
   }
+};
+
+Game.drawBody = function(screen, body) {
+  screen.fillRect(body.center.x - body.size.x / 2,
+                  body.center.y - body.size.y / 2,
+                  body.size.x,
+                  body.size.y);
 };
